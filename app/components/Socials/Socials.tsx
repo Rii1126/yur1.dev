@@ -1,8 +1,8 @@
 import {
   FaGithub,
   FaLinkedin,
-  FaInstagram,
-  FaFacebook,
+  // FaInstagram,
+  // FaFacebook,
   FaTelegramPlane,
 } from "react-icons/fa";
 

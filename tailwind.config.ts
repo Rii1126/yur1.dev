@@ -31,7 +31,7 @@ export default {
         },
       },
       animation: {
-        shine: "shine 0.6s linear forwards", // Plays once and stops
+        shine: "shine 0.6s linear forwards",
       },
     },
   },

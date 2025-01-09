@@ -6,7 +6,7 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogFooter,
+  // DialogFooter,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
@@ -39,9 +39,9 @@ const ProjectCard: React.FC<{
   data: CardData;
   onClick: () => void;
   children?: React.ReactNode;
-}> = ({ data, onClick, children }) => {
+}> = ({ data, children }) => {
   return (
-    <div className="">
+    <div className="max-w-[900px]">
       <div className="w-full rounded-xl border bg-[rgb(13,13,13)] shadow-inner text-white overflow-hidden">
         <div className="">
           <div className="w-full aspect-video relative">
@@ -56,7 +56,12 @@ const ProjectCard: React.FC<{
             <p className="text-gray-300 mb-4">{data.description}</p>
             <div className="flex flex-wrap gap-2 mb-4">
               {data.technologies.map((tech, index) => (
-                <img key={index} alt={tech} className="w-6 h-6" />
+                <img
+                  key={index}
+                  // src={techIcons[tech]}
+                  alt={tech}
+                  className="w-6 h-6"
+                />
               ))}
             </div>
             {children}
@@ -187,7 +192,7 @@ const Portfolio: React.FC = () => {
                 {selectedImage && (
                   <img
                     src={selectedImage}
-                    alt="Selected preview"
+                    alt={`Preview of ${selectedCard.title}`} // Meaningful alt text
                     className="w-full max-w-[300px] object-cover rounded-lg mx-auto"
                   />
                 )}

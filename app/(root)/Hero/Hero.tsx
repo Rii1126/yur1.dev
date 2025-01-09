@@ -4,7 +4,7 @@ import { FaMapPin } from "react-icons/fa";
 import React from "react";
 import Image from "next/image";
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <div className="w-full">
       <div className="max-w-[900px] h-[80vh] mx-auto flex flex-col justify-center relative px-4">
@@ -29,7 +29,7 @@ const Hero = () => {
                 <Socials />
               </div>
               <div>
-                <Button className="rounded" variant={"secondary"}>
+                <Button className="rounded bg-secondary text-white">
                   <a className="text-sm font-semibold" href="">
                     Hire me
                   </a>
@@ -48,7 +48,7 @@ const Hero = () => {
 
               <Image
                 src="/hero-image.png"
-                alt="yuri"
+                alt="hero-yuri"
                 width={200}
                 height={200}
                 className="w-24 sm:w-36 lg:w-48 h-24 sm:h-36 lg:h-48 border rounded-xl"
