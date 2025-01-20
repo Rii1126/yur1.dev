@@ -6,7 +6,10 @@ import { cn } from "@/lib/utils";
 
 // Fix the Drawer component's props typing
 interface DrawerProps
-  extends React.ComponentProps<typeof DrawerPrimitive.Root> {
+  extends Omit<
+    React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Root>,
+    "shouldScaleBackground"
+  > {
   shouldScaleBackground?: boolean;
 }
 
