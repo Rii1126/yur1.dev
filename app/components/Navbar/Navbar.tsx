@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="bg-grid">
+    <div className="bg-grid overflow-hidden">
       <div className="py-4 px-6 max-w-[900px] mx-auto">
         <div className="flex justify-between items-center">
           {/* Brand Logo */}

@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className="overflow-x-hidden overflow-auto" lang="en">
       <body className={`${blinker.className} antialiased`}>{children}</body>
     </html>
   );
