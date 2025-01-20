@@ -4,10 +4,9 @@ import * as React from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
 import { cn } from "@/lib/utils";
 
-// Fix the Drawer component's props typing
 interface DrawerProps
-  extends React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Root> {
-  shouldScaleBackground?: boolean; // explicitly define shouldScaleBackground
+  extends React.ComponentProps<typeof DrawerPrimitive.Root> {
+  shouldScaleBackground?: boolean;
 }
 
 const Drawer = ({ shouldScaleBackground = true, ...props }: DrawerProps) => (
@@ -18,16 +17,10 @@ const Drawer = ({ shouldScaleBackground = true, ...props }: DrawerProps) => (
 );
 Drawer.displayName = "Drawer";
 
-// Drawer Trigger
 const DrawerTrigger = DrawerPrimitive.Trigger;
-
-// Drawer Portal
 const DrawerPortal = DrawerPrimitive.Portal;
-
-// Drawer Close
 const DrawerClose = DrawerPrimitive.Close;
 
-// Drawer Overlay
 const DrawerOverlay = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>
@@ -40,7 +33,6 @@ const DrawerOverlay = React.forwardRef<
 ));
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
 
-// Drawer Content
 const DrawerContent = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>
@@ -62,7 +54,6 @@ const DrawerContent = React.forwardRef<
 ));
 DrawerContent.displayName = "DrawerContent";
 
-// Drawer Header
 const DrawerHeader = ({
   className,
   ...props
@@ -74,7 +65,6 @@ const DrawerHeader = ({
 );
 DrawerHeader.displayName = "DrawerHeader";
 
-// Drawer Footer
 const DrawerFooter = ({
   className,
   ...props
@@ -86,7 +76,6 @@ const DrawerFooter = ({
 );
 DrawerFooter.displayName = "DrawerFooter";
 
-// Drawer Title
 const DrawerTitle = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>
@@ -102,7 +91,6 @@ const DrawerTitle = React.forwardRef<
 ));
 DrawerTitle.displayName = DrawerPrimitive.Title.displayName;
 
-// Drawer Description
 const DrawerDescription = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>
@@ -115,7 +103,6 @@ const DrawerDescription = React.forwardRef<
 ));
 DrawerDescription.displayName = DrawerPrimitive.Description.displayName;
 
-// Optional: Placeholder for a Modal for large screens
 const LargeScreenModal = ({ children, isOpen, onClose }: any) => {
   if (!isOpen) return null;
   return (
@@ -144,5 +131,5 @@ export {
   DrawerFooter,
   DrawerTitle,
   DrawerDescription,
-  LargeScreenModal, // Export the modal if needed
+  LargeScreenModal,
 };
